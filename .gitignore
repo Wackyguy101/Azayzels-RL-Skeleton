@@ -1,0 +1,17 @@
+# Build/cache
+.gradle/
+build/
+out/
+bin/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Local JDK (DO NOT COMMIT)
+.jdk/
+
+# OS
+.DS_Store
+Thumbs.db
