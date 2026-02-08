@@ -2,8 +2,31 @@ Azayzels-RL-Skeleton
 
 RuneLite plugin skeleton for the Azayzels plugin series.
 
-This repo is the base template. Do not rename or run renamers inside this skeleton repo.
-You only rename clones of this repo.
+This repository is a base template used to create new RuneLite plugins.
+It is intentionally minimal, portable, and designed to be cloned repeatedly.
+
+Base package note (important)
+
+The base package in this skeleton is intentionally named:
+
+com.azayzels.azayzelsrlskeleton
+
+
+This is a temporary placeholder package used only in the skeleton.
+
+When you clone this repository to start a real plugin, the package name will be renamed automatically by your renamer script.
+
+Do not rename packages or run renamers inside this skeleton repo.
+
+Rules (read this once)
+
+❌ Do NOT rename this skeleton repo
+
+❌ Do NOT run renamer scripts inside this repo
+
+✅ ONLY rename clones of this repo
+
+✅ Treat this repo as immutable once cloned correctly
 
 Requirements
 
@@ -17,15 +40,15 @@ Internet connection (for Gradle dependencies / Java 11 install if needed)
 
 1) Get the skeleton onto your PC
 
-Pick one:
+Choose one method:
 
-Option A: GitHub “Use this template”
+Option A: GitHub template (recommended)
 
-On GitHub, click Use this template
+Click Use this template on GitHub
 
-Create your new repo
+Create your new repository
 
-Clone your new repo locally
+Clone your new repository locally
 
 Option B: Clone directly
 git clone https://github.com/Wackyguy101/Azayzels-RL-Skeleton.git
@@ -34,7 +57,7 @@ git clone https://github.com/Wackyguy101/Azayzels-RL-Skeleton.git
 
 Open the folder in VS Code
 
-Open a terminal in VS Code (PowerShell)
+Open a PowerShell terminal inside VS Code
 
 3) First-time setup (Java 11)
 
@@ -43,7 +66,13 @@ Run:
 .\01_setup_vscode_windows.ps1
 
 
-This ensures the project uses Java 11 correctly (auto-installs Java 11 if your setup script is configured to do so).
+This ensures:
+
+Java 11 is used
+
+Gradle is configured correctly
+
+(Optional) Java 11 is auto-installed if your setup script supports it
 
 4) Build check (recommended)
 
@@ -52,21 +81,30 @@ Run:
 .\gradlew clean build
 
 
-You should see: BUILD SUCCESSFUL
+Expected result:
 
-5) Run (dev)
+BUILD SUCCESSFUL
+
+5) Run (development)
 
 Run:
 
 .\02_run_windows.ps1
 
-6) Create a new plugin from this skeleton (your workflow)
+6) Create a new plugin from this skeleton (normal workflow)
 
-Clone / copy the skeleton into a new folder
+This is the only time renaming happens.
 
-Rename the folder to your plugin name (example: Azayzels Kill Tracker)
+Clone or copy this skeleton into a new folder
 
-Run your renamer script (paste from your saved notepad at this step)
+Rename the folder to your plugin name
+Example:
+
+Azayzels Kill Tracker
+
+
+Run your renamer script
+(paste from your saved notepad at this step)
 
 Build:
 
@@ -77,22 +115,20 @@ Run:
 
 .\02_run_windows.ps1
 
-Important rules
+Keep the skeleton clean
 
-Do not run renamers inside Azayzels-RL-Skeleton.
+Do not commit the following to this repo:
 
-Only rename clones.
+.jdk/
 
-Keep the skeleton clean:
+build/
 
-don’t commit .jdk/
+.gradle/
 
-don’t commit build/
-
-don’t commit .gradle/
+These are local artifacts only.
 
 Troubleshooting
-Build fails because Java is wrong
+Build fails due to Java issues
 
 Run:
 
@@ -103,18 +139,20 @@ Then:
 
 .\gradlew clean build
 
-“Access denied” deleting .jdk or Java DLLs locked
+“Access denied” when deleting .jdk or Java DLLs
 
-Close VS Code / IntelliJ and stop Gradle daemons:
+Close VS Code / IntelliJ
+
+Stop Gradle daemons:
 
 .\gradlew --stop
 
 
-Then retry delete.
+Retry deletion
 
 Windows system variable check (IMPORTANT)
 
-If you still have build issues after running the setup script, verify your system variables.
+If problems persist, check your system environment variables.
 
 Open system environment variables
 
@@ -131,7 +169,7 @@ Go to the Advanced tab
 
 Click Environment Variables
 
-Check / fix these variables
+Verify these variables
 JAVA_HOME
 
 If present, it must point to a Java 11 JDK
@@ -145,13 +183,13 @@ If it points to Java 17+, edit or remove it
 
 PATH
 
-Ensure Java 11’s bin folder is either:
+Ensure Java 11’s bin directory is either:
 
-included correctly, or
+configured correctly, or
 
-Java entries are removed so Gradle can use toolchains
+Java entries are removed so Gradle toolchains can decide
 
-After changes
+After making changes
 
 Click OK
 
@@ -167,4 +205,4 @@ This skeleton assumes Java 11
 
 RuneLite plugin development will not work correctly on Java 17+
 
-Environment variables override scripts — always check them if something feels “weird”
+Environment variables override scripts — always check them if behavior feels wrong
